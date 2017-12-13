@@ -1,5 +1,5 @@
 
-package form;
+package form.musteri;
 
 import form.musteri.FrmMusteriSiparis;
 import java.awt.Color;
@@ -15,12 +15,12 @@ import property.Urun;
  *
  * @author Tugay Demirel
  */
-public class panelDeneme extends javax.swing.JPanel {
+public class PnlUrunGetir extends javax.swing.JPanel {
 
     /**
      * Creates new form panelDeneme
      */
-    public panelDeneme() {
+    public PnlUrunGetir() {
         initComponents();
 //        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         urunGetir();
@@ -28,7 +28,7 @@ public class panelDeneme extends javax.swing.JPanel {
             Panel icPanel = new Panel();
 
     ArrayList<Urun> urunList = null;
-    public panelDeneme(ArrayList<Urun> urunList) {
+    public PnlUrunGetir(ArrayList<Urun> urunList) {
 
 
         this.urunList = (ArrayList<Urun>) urunList.clone();

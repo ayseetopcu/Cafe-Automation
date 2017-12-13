@@ -3,7 +3,6 @@ package form.musteri;
 import database.KategoriCrud;
 import database.SiparisCrud;
 import database.UrunCrud;
-import form.panelDeneme;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.net.Socket;
@@ -48,7 +47,7 @@ public class FrmMusteriSiparis extends javax.swing.JFrame {
             ArrayList<Urun> urunList = (ArrayList<Urun>) new UrunCrud().read(kategori);
             JScrollPane scrollPane = new JScrollPane();
             jTabbedPane6.addTab(kategori.getName(), scrollPane);
-            panelDeneme pnDeneme = new panelDeneme(urunList);
+            PnlUrunGetir pnDeneme = new PnlUrunGetir(urunList);
             scrollPane.setViewportView(pnDeneme);
         }
     }
