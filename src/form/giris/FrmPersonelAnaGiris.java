@@ -14,11 +14,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FrmPersonelAnaGiris extends javax.swing.JFrame {
 
-    static ServerSocket ss;
-    static Socket s;
-    static DataInputStream din;
-    static DataOutputStream dout;
-
     public FrmPersonelAnaGiris() {
         initComponents();
     }
@@ -108,7 +103,7 @@ public class FrmPersonelAnaGiris extends javax.swing.JFrame {
 
         new FrmPersonelGiris(2).setVisible(true);
         this.dispose();
-       
+
 
     }//GEN-LAST:event_btnAdminActionPerformed
 
@@ -116,86 +111,13 @@ public class FrmPersonelAnaGiris extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FrmPersonelAnaGiris.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FrmPersonelAnaGiris.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FrmPersonelAnaGiris.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FrmPersonelAnaGiris.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FrmPersonelAnaGiris().setVisible(true);
             }
         });
-
-        String msgin = "";
-        try {
-            System.out.println("hadi bakalım");
-            ss = new ServerSocket(1201);
-            s = ss.accept();
-
-            din = new DataInputStream(s.getInputStream());
-            dout = new DataOutputStream(s.getOutputStream());
-            while (!msgin.equals("exit")) {
-
-                msgin = din.readUTF();
-                System.out.println(msgin);
-                System.out.println("olaylar olaylar"
-                        + "");
-                String[] mesajBilgileri = msgin.split(",");
-//                JOptionPane pane = new JOptionPane(mesajBilgileri[2] + "", JOptionPane.WARNING_MESSAGE,
-//                        JOptionPane.DEFAULT_OPTION);
-//                JDialog dialog = pane.createDialog("HESAP TALEBİ ");
-//                dialog.setLocation(400, 400);
-//                dialog.setVisible(true);
-//                pane.show();
-                
-                JOptionPane.showMessageDialog(null, mesajBilgileri[2],mesajBilgileri[1]+"-Müşteri Talebi",JOptionPane.WARNING_MESSAGE);
-
-                String masaId = mesajBilgileri[0];
-
-                DefaultTableModel dtm = (DefaultTableModel) FrmPersonelAnaSayfa.tblMasa.getModel();
-                for (int i = 0; i < dtm.getRowCount(); i++) {
-                    String columnValue = (String) dtm.getValueAt(i, 0);
-                    System.out.println("soket ile gelen masaid" + masaId);
-                    System.out.println("colon value" + columnValue);
-                    if (masaId.equals(columnValue)) {
-                        FrmPersonelAnaSayfa.kontrol++;
-                        System.out.println("kontrol : " + FrmPersonelAnaSayfa.kontrol);
-                        FrmPersonelAnaSayfa.tblMasa.setRowSelectionInterval(i, i);
-                        System.out.println("i+" + i);
-                        break;
-                    }
-                }
-            }
-
-        } catch (Exception e) {
-        }
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
