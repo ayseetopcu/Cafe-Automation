@@ -1,4 +1,4 @@
-package form;
+package form.baslangic;
 
 import database.CihazCrud;
 import form.giris.FrmMusteriGiris;
@@ -17,7 +17,7 @@ import property.Cihaz;
  *
  * @author Tugay Demirel
  */
-public class BaslangicSinifi {
+public class MusteriBaslangicSinifi {
 
     public static Socket s;
     public static DataInputStream din;
@@ -86,7 +86,7 @@ public class BaslangicSinifi {
     }
 
     public static void main(String[] args) {
-        BaslangicSinifi baslangicSinifi = new BaslangicSinifi();
+        MusteriBaslangicSinifi baslangicSinifi = new MusteriBaslangicSinifi();
 
         if (!baslangicSinifi.isExistMacAddress()) {
             String a = baslangicSinifi.sb.toString();

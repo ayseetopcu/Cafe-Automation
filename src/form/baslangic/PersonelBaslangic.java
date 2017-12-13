@@ -1,5 +1,5 @@
 
-package form;
+package form.baslangic;
 
 import form.giris.FrmPersonelAnaGiris;
 import form.personel.FrmPersonelAnaSayfa;

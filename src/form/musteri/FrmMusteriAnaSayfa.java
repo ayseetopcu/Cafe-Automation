@@ -6,7 +6,7 @@
 package form.musteri;
 
 import database.MasaCrud;
-import form.BaslangicSinifi;
+import form.baslangic.MusteriBaslangicSinifi;
 import form.giris.FrmMusteriGiris;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -311,7 +311,7 @@ public class FrmMusteriAnaSayfa extends javax.swing.JFrame {
     private void btn_GarsonCagirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_GarsonCagirActionPerformed
         String msgout = masaId + "," +  masa.getMasaAdi() + "," +  "Bakar mısınız?";
         try {
-            BaslangicSinifi.dout.writeUTF(msgout);
+            MusteriBaslangicSinifi.dout.writeUTF(msgout);
         } catch (IOException ex) {
             Logger.getLogger(FrmMusteriAnaSayfa.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -321,7 +321,7 @@ public class FrmMusteriAnaSayfa extends javax.swing.JFrame {
         try {
 
             String msgout = masaId + "," +  masa.getMasaAdi() + "," + "Hesabı alabilir miyiz?";
-            BaslangicSinifi.dout.writeUTF(msgout);
+            MusteriBaslangicSinifi.dout.writeUTF(msgout);
 
         } catch (Exception e) {
         }
