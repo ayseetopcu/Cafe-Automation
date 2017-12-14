@@ -42,10 +42,20 @@
   </Layout>
   <SubComponents>
     <Container class="javax.swing.JTabbedPane" name="tbpanePersonel">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="66" green="66" red="0" type="rgb"/>
+        </Property>
+      </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
         <Container class="javax.swing.JPanel" name="pnlMasalar">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Masalar">
@@ -60,19 +70,17 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jScrollPane4" pref="669" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Component id="jScrollPane4" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnMasaEkle" min="-2" pref="103" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="btnMasaEkle" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnMusteriTasi" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnHesapKes" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="327" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnCikis5" max="32767" attributes="0"/>
                           <Component id="pnlMasaIcerigi" max="32767" attributes="0"/>
@@ -91,20 +99,27 @@
                               <Component id="pnlMasaIcerigi" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnMasaEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="btnMusteriTasi" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="btnHesapKes" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          <Component id="btnCikis5" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnMasaEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnCikis5" min="-2" pref="60" max="-2" attributes="0"/>
+                              <Component id="btnMusteriTasi" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="btnHesapKes" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -113,6 +128,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblMasa">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="8" rowCount="4">
                         <Column editable="true" title="Masa Numaras&#x131;" type="java.lang.Object"/>
@@ -183,6 +201,9 @@
             </Container>
             <Container class="javax.swing.JPanel" name="pnlMasaIcerigi">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Masa &#x130;&#xe7;eri&#x11f;i"/>
@@ -272,6 +293,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnMasaEkle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/addIcon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Masa Ekle"/>
               </Properties>
               <Events>
@@ -280,6 +304,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMusteriTasi">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_move_36522.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="M&#xfc;&#x15f;teriyi Ta&#x15f;&#x131;"/>
               </Properties>
               <Events>
@@ -288,7 +315,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnHesapKes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Hesap Kes"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_check_67194 (1).png"/>
+                </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnHesapKesActionPerformed"/>
@@ -299,6 +328,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCikis5">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_sign-out_1608410.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xc7;&#x131;k&#x131;&#x15f;"/>
               </Properties>
               <Events>
@@ -311,6 +343,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlMusteriler">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Kay&#x131;tl&#x131; M&#xfc;&#x15f;teriler">
@@ -325,13 +362,13 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" pref="771" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" pref="815" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <Component id="btnMusteriGuncelle" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="btnMusteriSil" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnCikis4" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="btnCikis4" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -343,19 +380,24 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="btnMusteriGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="btnMusteriSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                           <Component id="btnCikis4" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -364,6 +406,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblMusteriler">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
                         <Column editable="true" title="Title 1" type="java.lang.Object"/>
@@ -384,6 +429,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnMusteriGuncelle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_gtk-refresh_48111.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Guncelle"/>
               </Properties>
               <Events>
@@ -392,6 +440,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMusteriSil">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_human-trashcan_full-new_25357.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sil"/>
               </Properties>
               <Events>
@@ -400,6 +451,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCikis4">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_sign-out_1608410.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xc7;&#x131;k&#x131;&#x15f;"/>
               </Properties>
               <Events>
@@ -409,6 +463,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlMonu">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Genel M&#xf6;n&#xfc;">
@@ -422,21 +481,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane2" min="-2" pref="632" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane2" pref="771" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="btnMenuEkle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnMenuGuncelle" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnMenuSil" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="btnStok" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnKategori" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnCikis3" min="-2" pref="100" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="btnMenuEkle" max="32767" attributes="0"/>
+                          <Component id="btnMenuGuncelle" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnStok" max="32767" attributes="0"/>
+                          <Component id="btnKategori" max="32767" attributes="0"/>
+                          <Component id="btnMenuSil" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnCikis3" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -446,29 +499,34 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jScrollPane2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="btnMenuEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnMenuGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnMenuSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnMenuEkle" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnMenuGuncelle" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnStok" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnKategori" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnMenuSil" min="-2" pref="65" max="-2" attributes="0"/>
+                              <EmptySpace pref="18" max="32767" attributes="0"/>
+                              <Component id="btnCikis3" min="-2" pref="65" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                              <Component id="btnCikis3" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                                  <Component id="btnStok" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="btnKategori" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <Component id="jScrollPane2" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="36" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -477,6 +535,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblMenu">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
                         <Column editable="true" title="Title 1" type="java.lang.Object"/>
@@ -497,6 +558,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnMenuGuncelle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_gtk-refresh_48111.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Guncelle"/>
               </Properties>
               <Events>
@@ -505,6 +569,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMenuEkle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/addIcon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ekle"/>
               </Properties>
               <Events>
@@ -513,6 +580,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnMenuSil">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_human-trashcan_full-new_25357.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sil"/>
               </Properties>
               <Events>
@@ -521,6 +591,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnStok">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_stock_task-assigned_24331.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Stokta Var/Yok"/>
               </Properties>
               <Events>
@@ -529,6 +602,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnKategori">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_category_103432.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Kategori Ekle"/>
               </Properties>
               <Events>
@@ -537,6 +613,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCikis3">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_sign-out.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xc7;&#x131;k&#x131;&#x15f;"/>
               </Properties>
               <Events>
@@ -546,6 +625,11 @@
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlRezervasyonlar">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Rezervasyonlar">
@@ -557,52 +641,48 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnRezervEkle" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRezervGuncelle" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnRezervSil" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="478" max="32767" attributes="0"/>
-                      <Component id="btnCikis" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane6" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnRezervEkle" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnRezervGuncelle" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnRezervSil" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnCikis" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane6" pref="815" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="433" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                              <Component id="btnRezervEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnRezervGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              <Component id="btnRezervSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="btnCikis" min="-2" pref="60" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnCikis" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnRezervSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnRezervGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnRezervEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="72" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -611,6 +691,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblRezervasyon">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="5" rowCount="4">
                         <Column editable="true" title="Id" type="java.lang.Object"/>
@@ -632,6 +715,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnRezervEkle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/addIcon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ekle"/>
               </Properties>
               <Events>
@@ -640,6 +726,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnRezervGuncelle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_gtk-refresh_48111.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Guncelle"/>
               </Properties>
               <Events>
@@ -648,6 +737,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnRezervSil">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_human-trashcan_full-new_25357.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sil"/>
               </Properties>
               <Events>
@@ -656,12 +748,23 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCikis">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_sign-out_1608410.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xc7;IKI&#x15e;"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCikisActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="pnlPersonel">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Personel Bilgileri">
@@ -673,55 +776,48 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="btnPersonelEkle" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPersonelGuncelle" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btnPersonelSil" min="-2" pref="120" max="-2" attributes="0"/>
-                      <EmptySpace pref="235" max="32767" attributes="0"/>
-                      <Component id="btnCikis2" min="-2" pref="140" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="btnPersonelEkle" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="btnPersonelGuncelle" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="btnPersonelSil" min="-2" pref="120" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="btnCikis2" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane3" pref="815" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="439" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="btnCikis2" alignment="1" max="32767" attributes="0"/>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="btnPersonelEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="btnPersonelGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="btnPersonelSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                          </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnPersonelSil" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnPersonelGuncelle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnPersonelEkle" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="btnCikis2" alignment="1" min="-2" pref="60" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="72" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace pref="20" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="66" green="66" red="0" type="rgb"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
@@ -730,6 +826,9 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="tblPersonel">
                   <Properties>
+                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="66" green="66" red="0" type="rgb"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="4" rowCount="4">
                         <Column editable="true" title="Title 1" type="java.lang.Object"/>
@@ -750,6 +849,9 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnPersonelEkle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/addPersonIcon48.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Ekle"/>
               </Properties>
               <Events>
@@ -758,6 +860,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnPersonelGuncelle">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_gtk-refresh_48111.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="G&#xfc;ncelle"/>
               </Properties>
               <Events>
@@ -766,6 +871,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnPersonelSil">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_human-trashcan_full-new_25357.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Sil"/>
               </Properties>
               <Events>
@@ -774,6 +882,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnCikis2">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/if_sign-out.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="&#xc7;IKI&#x15e;"/>
               </Properties>
               <Events>

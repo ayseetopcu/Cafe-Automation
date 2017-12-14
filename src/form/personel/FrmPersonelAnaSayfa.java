@@ -8,6 +8,7 @@ import database.RezervasyonCrud;
 import database.SiparisCrud;
 import database.UrunCrud;
 import form.giris.FrmPersonelAnaGiris;
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -36,6 +37,8 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         personelGetir();
         rezervasyonGetir();
         masalariGetir();
+        
+        
 
         this.personel = personel;
 
@@ -76,6 +79,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         dtm.addColumn("Musteri Soyadı");
         dtm.addColumn("Musteri Email");
         dtm.addColumn("Musteri Telefon");
+        tblMusteriler.setForeground(Color.WHITE);
         for (Musteri musteri : musteriler) {
             dtm.addRow(new String[]{"" + musteri.getId(), musteri.getIsim(), musteri.getSoyisim(), musteri.geteMail(), musteri.getTelefon()});
         }
@@ -93,9 +97,10 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         dtm.addColumn("Müşteri Telefon");
         dtm.addColumn("Siparişler");
         dtm.addColumn("Tutar");
+        
+        tblMasa.setForeground(Color.WHITE);
 
         for (ArrayList<String> l : masalar) {
-            System.out.println("tutututu" + l.get(7));
             String durum = "";
             if (l.get(3).equals("1")) {
                 durum = "BOŞ";
@@ -119,6 +124,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         dtm.addColumn("Kategori");
         dtm.addColumn("Stok Durumu");
 
+        tblMenu.setForeground(Color.WHITE);
         for (Urun menu : uruns) {
             String kategori = "";
             String stokDurumu = "";
@@ -157,17 +163,13 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         dtm.addColumn("Maas");
         dtm.addColumn("Statü");
         dtm.addColumn("Tarih");
-        System.out.println("kolonlar eklendi");
 
-        System.out.println("personeller: " + personels.get(0).getAd());
-        System.out.println(personels.size());
+        tblPersonel.setForeground(Color.WHITE);
         for (Personel personel : personels) {
-            System.out.println("tugay: " + personel.getAd());
             String cinsiyet = personel.getCinsiyet() == 1 ? "Bayan" : "Bay";
             String status = personel.getStatu() == 1 ? "Personel" : "Yönetici";
             dtm.addRow(new String[]{"" + personel.getId(), personel.getAd() + " " + personel.getSoyad(), personel.getEmail(), personel.getTelefon(), cinsiyet, personel.getMaas(), status, "" + personel.getDate()});
         }
-        System.out.println("fordan çıktı");
         tblPersonel.setModel(dtm);
     }
 
@@ -180,6 +182,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         dtm.addColumn("Masa Bilgileri");
         dtm.addColumn("Rezervasyon Tarihi");
 
+        tblRezervasyon.setForeground(Color.WHITE);
         for (Rezervasyon rezervasyon : rezervasyons) {
             dtm.addRow(new String[]{rezervasyon.getId() + "", rezervasyon.getAd(), rezervasyon.getTelefon(), rezervasyon.getMasaId() + "", rezervasyon.getDate().toString()});
         }
@@ -262,6 +265,13 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         setTitle("PERSONEL İŞLEMLERİ");
         setSize(new java.awt.Dimension(0, 0));
 
+        tbpanePersonel.setBackground(new java.awt.Color(0, 102, 102));
+
+        pnlMasalar.setBackground(new java.awt.Color(0, 102, 102));
+
+        jScrollPane4.setBackground(new java.awt.Color(0, 102, 102));
+
+        tblMasa.setBackground(new java.awt.Color(0, 102, 102));
         tblMasa.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -313,6 +323,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             tblMasa.getColumnModel().getColumn(6).setPreferredWidth(15);
         }
 
+        pnlMasaIcerigi.setBackground(new java.awt.Color(0, 102, 102));
         pnlMasaIcerigi.setBorder(javax.swing.BorderFactory.createTitledBorder("Masa İçeriği"));
 
         jLabel1.setText("Masa Adı");
@@ -363,6 +374,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
                 .addGap(56, 56, 56))
         );
 
+        btnMasaEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/addIcon48.png"))); // NOI18N
         btnMasaEkle.setText("Masa Ekle");
         btnMasaEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -370,6 +382,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnMusteriTasi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_move_36522.png"))); // NOI18N
         btnMusteriTasi.setText("Müşteriyi Taşı");
         btnMusteriTasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -377,13 +390,14 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
-        btnHesapKes.setText("Hesap Kes");
+        btnHesapKes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_check_67194 (1).png"))); // NOI18N
         btnHesapKes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHesapKesActionPerformed(evt);
             }
         });
 
+        btnCikis5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-out_1608410.png"))); // NOI18N
         btnCikis5.setText("Çıkış");
         btnCikis5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -398,16 +412,15 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             .addGroup(pnlMasalarLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMasalarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 669, Short.MAX_VALUE)
                     .addGroup(pnlMasalarLayout.createSequentialGroup()
-                        .addComponent(jScrollPane4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                    .addGroup(pnlMasalarLayout.createSequentialGroup()
-                        .addComponent(btnMasaEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnMasaEkle)
+                        .addGap(18, 18, 18)
                         .addComponent(btnMusteriTasi)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(btnHesapKes)
-                        .addGap(327, 327, 327)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlMasalarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCikis5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(pnlMasaIcerigi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -421,17 +434,23 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
                     .addGroup(pnlMasalarLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(pnlMasaIcerigi, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlMasalarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnMasaEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnMusteriTasi, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnHesapKes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCikis5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7))
+                .addGap(18, 18, 18)
+                .addGroup(pnlMasalarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMasalarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnMasaEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnCikis5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMusteriTasi, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnHesapKes, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         tbpanePersonel.addTab("Masalar", pnlMasalar);
 
+        pnlMusteriler.setBackground(new java.awt.Color(0, 102, 102));
+
+        jScrollPane1.setBackground(new java.awt.Color(0, 102, 102));
+
+        tblMusteriler.setBackground(new java.awt.Color(0, 102, 102));
         tblMusteriler.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -450,6 +469,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblMusteriler);
 
+        btnMusteriGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_gtk-refresh_48111.png"))); // NOI18N
         btnMusteriGuncelle.setText("Guncelle");
         btnMusteriGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -457,6 +477,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnMusteriSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_human-trashcan_full-new_25357.png"))); // NOI18N
         btnMusteriSil.setText("Sil");
         btnMusteriSil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -464,6 +485,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnCikis4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-out_1608410.png"))); // NOI18N
         btnCikis4.setText("Çıkış");
         btnCikis4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -478,13 +500,13 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             .addGroup(pnlMusterilerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlMusterilerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE)
                     .addGroup(pnlMusterilerLayout.createSequentialGroup()
                         .addComponent(btnMusteriGuncelle)
                         .addGap(18, 18, 18)
                         .addComponent(btnMusteriSil)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCikis4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCikis4)))
                 .addContainerGap())
         );
         pnlMusterilerLayout.setVerticalGroup(
@@ -492,16 +514,21 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             .addGroup(pnlMusterilerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(pnlMusterilerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMusteriGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnMusteriSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCikis4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         tbpanePersonel.addTab("Kayıtlı Müşteriler", pnlMusteriler);
 
+        pnlMonu.setBackground(new java.awt.Color(0, 102, 102));
+
+        jScrollPane2.setBackground(new java.awt.Color(0, 102, 102));
+
+        tblMenu.setBackground(new java.awt.Color(0, 102, 102));
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -520,6 +547,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblMenu);
 
+        btnMenuGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_gtk-refresh_48111.png"))); // NOI18N
         btnMenuGuncelle.setText("Guncelle");
         btnMenuGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -527,6 +555,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnMenuEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/addIcon48.png"))); // NOI18N
         btnMenuEkle.setText("Ekle");
         btnMenuEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -534,6 +563,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnMenuSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_human-trashcan_full-new_25357.png"))); // NOI18N
         btnMenuSil.setText("Sil");
         btnMenuSil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -541,6 +571,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnStok.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_stock_task-assigned_24331.png"))); // NOI18N
         btnStok.setText("Stokta Var/Yok");
         btnStok.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -548,6 +579,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnKategori.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_category_103432.png"))); // NOI18N
         btnKategori.setText("Kategori Ekle");
         btnKategori.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -555,6 +587,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnCikis3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-out.png"))); // NOI18N
         btnCikis3.setText("Çıkış");
         btnCikis3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -568,43 +601,45 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMonuLayout.createSequentialGroup()
                 .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 771, Short.MAX_VALUE)
-                    .addGroup(pnlMonuLayout.createSequentialGroup()
-                        .addComponent(btnMenuEkle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnMenuGuncelle)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnMenuSil)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnStok)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnKategori)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnCikis3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btnMenuEkle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuGuncelle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnStok, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnKategori, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnMenuSil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCikis3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         pnlMonuLayout.setVerticalGroup(
             pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMonuLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMenuEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMenuGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMenuSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(btnCikis3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnStok, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(pnlMonuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(pnlMonuLayout.createSequentialGroup()
+                        .addComponent(btnMenuEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMenuGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnStok, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnKategori, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnMenuSil, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                        .addComponent(btnCikis3, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         tbpanePersonel.addTab("Genel Mönü", pnlMonu);
 
+        pnlRezervasyonlar.setBackground(new java.awt.Color(0, 102, 102));
+
+        jScrollPane6.setBackground(new java.awt.Color(0, 102, 102));
+
+        tblRezervasyon.setBackground(new java.awt.Color(0, 102, 102));
         tblRezervasyon.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -623,6 +658,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(tblRezervasyon);
 
+        btnRezervEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/addIcon48.png"))); // NOI18N
         btnRezervEkle.setText("Ekle");
         btnRezervEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -630,6 +666,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnRezervGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_gtk-refresh_48111.png"))); // NOI18N
         btnRezervGuncelle.setText("Guncelle");
         btnRezervGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -637,6 +674,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnRezervSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_human-trashcan_full-new_25357.png"))); // NOI18N
         btnRezervSil.setText("Sil");
         btnRezervSil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -644,7 +682,13 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnCikis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-out_1608410.png"))); // NOI18N
         btnCikis.setText("ÇIKIŞ");
+        btnCikis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCikisActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlRezervasyonlarLayout = new javax.swing.GroupLayout(pnlRezervasyonlar);
         pnlRezervasyonlar.setLayout(pnlRezervasyonlarLayout);
@@ -652,40 +696,39 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlRezervasyonlarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnRezervEkle)
-                .addGap(18, 18, 18)
-                .addComponent(btnRezervGuncelle)
-                .addGap(18, 18, 18)
-                .addComponent(btnRezervSil)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 478, Short.MAX_VALUE)
-                .addComponent(btnCikis, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlRezervasyonlarLayout.createSequentialGroup()
+                        .addComponent(btnRezervEkle)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRezervGuncelle)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnRezervSil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCikis))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlRezervasyonlarLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane6)
-                    .addContainerGap()))
         );
         pnlRezervasyonlarLayout.setVerticalGroup(
             pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRezervasyonlarLayout.createSequentialGroup()
-                .addContainerGap(433, Short.MAX_VALUE)
-                .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnRezervEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnRezervGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnRezervSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(btnCikis, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlRezervasyonlarLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(72, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlRezervasyonlarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCikis, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRezervSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRezervGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRezervEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         tbpanePersonel.addTab("Rezervasyonlar", pnlRezervasyonlar);
 
+        pnlPersonel.setBackground(new java.awt.Color(0, 102, 102));
+
+        jScrollPane3.setBackground(new java.awt.Color(0, 102, 102));
+
+        tblPersonel.setBackground(new java.awt.Color(0, 102, 102));
         tblPersonel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -704,6 +747,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(tblPersonel);
 
+        btnPersonelEkle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/addPersonIcon48.png"))); // NOI18N
         btnPersonelEkle.setText("Ekle");
         btnPersonelEkle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -711,6 +755,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnPersonelGuncelle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_gtk-refresh_48111.png"))); // NOI18N
         btnPersonelGuncelle.setText("Güncelle");
         btnPersonelGuncelle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -718,6 +763,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnPersonelSil.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_human-trashcan_full-new_25357.png"))); // NOI18N
         btnPersonelSil.setText("Sil");
         btnPersonelSil.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -725,6 +771,7 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             }
         });
 
+        btnCikis2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-out.png"))); // NOI18N
         btnCikis2.setText("ÇIKIŞ");
         btnCikis2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -738,38 +785,30 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
             pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlPersonelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(btnPersonelEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPersonelGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnPersonelSil, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 235, Short.MAX_VALUE)
-                .addComponent(btnCikis2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlPersonelLayout.createSequentialGroup()
+                        .addComponent(btnPersonelEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24)
+                        .addComponent(btnPersonelGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnPersonelSil, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCikis2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 815, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPersonelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane3)
-                    .addContainerGap()))
         );
         pnlPersonelLayout.setVerticalGroup(
             pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPersonelLayout.createSequentialGroup()
-                .addContainerGap(439, Short.MAX_VALUE)
-                .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnCikis2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlPersonelLayout.createSequentialGroup()
-                        .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnPersonelEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPersonelGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnPersonelSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addContainerGap())
-            .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pnlPersonelLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(72, Short.MAX_VALUE)))
+            .addGroup(pnlPersonelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(pnlPersonelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnPersonelSil, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPersonelGuncelle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnPersonelEkle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCikis2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         tbpanePersonel.addTab("Personel Bilgileri", pnlPersonel);
@@ -1079,6 +1118,10 @@ public class FrmPersonelAnaSayfa extends javax.swing.JFrame {
         new FrmPersonelAnaGiris().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnCikis5ActionPerformed
+
+    private void btnCikisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCikisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCikisActionPerformed
 
     /**
      * @param args the command line arguments
