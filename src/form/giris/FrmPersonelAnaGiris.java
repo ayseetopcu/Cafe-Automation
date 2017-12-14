@@ -29,7 +29,11 @@ public class FrmPersonelAnaGiris extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+
+        btnAdmin.setBackground(new java.awt.Color(102, 102, 102));
         btnAdmin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/admin.png"))); // NOI18N
         btnAdmin.setText("YÖNETİCİ GİRİŞİ");
         btnAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -37,7 +41,9 @@ public class FrmPersonelAnaGiris extends javax.swing.JFrame {
             }
         });
 
+        btnPersonel.setBackground(new java.awt.Color(102, 102, 102));
         btnPersonel.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnPersonel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/waiter.png"))); // NOI18N
         btnPersonel.setText("ÇALIŞAN GİRİŞİ");
         btnPersonel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,9 +73,9 @@ public class FrmPersonelAnaGiris extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnAdmin)
                 .addGap(18, 18, 18)
-                .addComponent(btnPersonel, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                .addComponent(btnPersonel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 

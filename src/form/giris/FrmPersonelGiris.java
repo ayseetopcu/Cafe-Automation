@@ -20,9 +20,9 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
     public FrmPersonelGiris(int statu) {
         initComponents();
         if (statu == 1) {
-            pnlArka.setBorder(new TitledBorder("Personel Girişi"));
+            pnlArka.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Çalışan Girişi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 20)));
         } else if (statu == 2) {
-            pnlArka.setBorder(new TitledBorder("Admin Girişi"));
+            pnlArka.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Yönetici Girişi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 20)));
         }
         this.statu = statu;
     }
@@ -45,7 +45,8 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
             }
         });
 
-        pnlArka.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personel Girişi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 14))); // NOI18N
+        pnlArka.setBackground(new java.awt.Color(0, 102, 102));
+        pnlArka.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Personel Girişi", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 18))); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel1.setText("E-Mail ");
@@ -54,6 +55,7 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
         jLabel2.setText("Şifre            ");
 
         btnGiris.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        btnGiris.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/if_sign-in.png"))); // NOI18N
         btnGiris.setText("Giriş");
         btnGiris.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -72,9 +74,11 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlArkaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnGiris, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(txtSifre))
+                    .addComponent(txtEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                    .addComponent(txtSifre)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlArkaLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnGiris, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(10, 10, 10))
         );
         pnlArkaLayout.setVerticalGroup(
@@ -88,9 +92,9 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
                 .addGroup(pnlArkaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(txtSifre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addComponent(btnGiris, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(btnGiris, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -117,8 +121,6 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
     private void btnGirisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGirisActionPerformed
         if (validation()) {
             ArrayList<Personel> personelList = (ArrayList<Personel>) new PersonelCrud().read(statu);
-            System.out.println("Bendeki bilgileri:");
-            System.out.println("kullanıcı adı : " + txtEmail.getText() + " sifre : " + txtSifre.getText() + " , " + txtSifre.getToolTipText());
             boolean kontrol = false;
             for (Personel personel : personelList) {
                 if (txtEmail.getText().trim().equals(personel.getEmail()) && txtSifre.getText().equals(personel.getSifre())) {
@@ -139,13 +141,11 @@ public class FrmPersonelGiris extends javax.swing.JFrame {
 
     boolean validation() {
         if (txtEmail.getText().equals("")) {
-            System.out.println("isim hatası");
             JOptionPane.showMessageDialog(this, "Lütfen bir isim giriniz!!!");
             txtEmail.requestFocus();//ilgili texte odaklar
             txtEmail.selectAll();
             return false;
         } else if (txtSifre.getText().equals("")) {
-            System.out.println("soyisim hatası");
             JOptionPane.showMessageDialog(this, "Lütfen bir soyisim giriniz!!!");
             txtSifre.requestFocus();//ilgili texte odaklar
             txtSifre.selectAll();

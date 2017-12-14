@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/lerimedt/NetBeansProjects/Cafe-Otomasyonu/src/form/giris/FrmMusteriKayit.java</file>
+            <file>file:/Users/lerimedt/NetBeansProjects/Cafe-Otomasyonu/src/form/personel/FrmPersonelAnaSayfa.java</file>
             <file>file:/Users/lerimedt/NetBeansProjects/Cafe-Otomasyonu/src/form/giris/FrmPersonelAnaGiris.java</file>
+            <file>file:/Users/lerimedt/NetBeansProjects/Cafe-Otomasyonu/src/form/giris/FrmPersonelGiris.java</file>
+            <file>file:/Users/lerimedt/NetBeansProjects/Cafe-Otomasyonu/src/form/baslangic/PersonelBaslangic.java</file>
         </group>
     </open-files>
 </project-private>
