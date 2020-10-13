@@ -1,4 +1,4 @@
-# Kafe-Otomasyonu
+# Cafe-Automation
 Kafelerdeki personel ve müşterilerin kullanımı için Java SE ile programlanmış bir uygulamadır. Projede swing kütüphanesi 
 kullanılmıştır. Database islemleri Mysql veritabanında procedure' ler kullanılarak yapılmıştır. 
 
